@@ -84,77 +84,91 @@ export default function WhyItMatters() {
                     <p className="mb-6 text-center font-body text-[11px] font-semibold tracking-[2px] text-paper-dim">
                         HUMAN-IN-THE-LOOP FLOW
                     </p>
-                    {/* Flow: Data → Agents → Recommendation → Human → Action */}
-                    <div className="flex flex-col items-center gap-0 sm:flex-row sm:items-center sm:justify-center sm:gap-0">
-                        {/* Step 1 */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
-                                <span className="font-display text-[13px] font-bold text-paper-muted">1</span>
+
+                    {/* Single relative container for flow + loop */}
+                    <div className="relative pb-10">
+                        {/* Flow row */}
+                        <div className="flex flex-col items-center gap-0 sm:flex-row sm:items-start sm:justify-between">
+                            {/* Step 1 */}
+                            <div className="flex flex-col items-center sm:flex-1">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                    <span className="font-display text-[13px] font-bold text-paper-muted">1</span>
+                                </div>
+                                <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Data Ingested</p>
                             </div>
-                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Data Ingested</p>
+                            {/* Arrow */}
+                            <div className="hidden sm:flex sm:items-center sm:pt-6 sm:flex-1 sm:max-w-[40px]">
+                                <div className="w-full border-t border-dashed border-paper-dim" />
+                            </div>
+                            <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                            {/* Step 2 */}
+                            <div className="flex flex-col items-center sm:flex-1">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                    <span className="font-display text-[13px] font-bold text-paper-muted">2</span>
+                                </div>
+                                <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Agents Reason</p>
+                            </div>
+                            {/* Arrow */}
+                            <div className="hidden sm:flex sm:items-center sm:pt-6 sm:flex-1 sm:max-w-[40px]">
+                                <div className="w-full border-t border-dashed border-paper-dim" />
+                            </div>
+                            <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                            {/* Step 3 */}
+                            <div className="flex flex-col items-center sm:flex-1">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                    <span className="font-display text-[13px] font-bold text-paper-muted">3</span>
+                                </div>
+                                <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Plan Proposed</p>
+                            </div>
+                            {/* Arrow */}
+                            <div className="hidden sm:flex sm:items-center sm:pt-6 sm:flex-1 sm:max-w-[40px]">
+                                <div className="w-full border-t border-dashed border-paper-dim" />
+                            </div>
+                            <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                            {/* Step 4 — highlighted */}
+                            <div className="flex flex-col items-center sm:flex-1">
+                                <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-teal bg-teal/10">
+                                    <ShieldCheck className="h-6 w-6 text-teal-dark" strokeWidth={1.8} />
+                                </div>
+                                <p className="mt-2 font-body text-[11px] font-bold text-teal-dark">Human Review</p>
+                                <div className="mt-1 flex gap-2 font-body text-[10px] text-paper-muted">
+                                    <span className="border border-paper-border px-1.5 py-0.5">Approve</span>
+                                    <span className="border border-paper-border px-1.5 py-0.5">Override</span>
+                                    <span className="border border-paper-border px-1.5 py-0.5">Defer</span>
+                                </div>
+                            </div>
+                            {/* Arrow */}
+                            <div className="hidden sm:flex sm:items-center sm:pt-6 sm:flex-1 sm:max-w-[40px]">
+                                <div className="w-full border-t border-dashed border-paper-dim" />
+                            </div>
+                            <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                            {/* Step 5 */}
+                            <div className="flex flex-col items-center sm:flex-1">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                    <span className="font-display text-[13px] font-bold text-paper-muted">5</span>
+                                </div>
+                                <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Execute</p>
+                            </div>
                         </div>
-                        {/* Arrow */}
-                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
-                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
-                        {/* Step 2 */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
-                                <span className="font-display text-[13px] font-bold text-paper-muted">2</span>
-                            </div>
-                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Agents Reason</p>
-                        </div>
-                        {/* Arrow */}
-                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
-                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
-                        {/* Step 3 */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
-                                <span className="font-display text-[13px] font-bold text-paper-muted">3</span>
-                            </div>
-                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Plan Proposed</p>
-                        </div>
-                        {/* Arrow */}
-                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
-                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
-                        {/* Step 4 — highlighted */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-teal bg-teal/10">
-                                <ShieldCheck className="h-6 w-6 text-teal-dark" strokeWidth={1.8} />
-                            </div>
-                            <p className="mt-2 font-body text-[11px] font-bold text-teal-dark">Human Review</p>
-                            <div className="mt-1 flex gap-2 font-body text-[10px] text-paper-muted">
-                                <span className="border border-paper-border px-1.5 py-0.5">Approve</span>
-                                <span className="border border-paper-border px-1.5 py-0.5">Override</span>
-                                <span className="border border-paper-border px-1.5 py-0.5">Defer</span>
-                            </div>
-                        </div>
-                        {/* Arrow */}
-                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
-                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
-                        {/* Step 5 */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
-                                <span className="font-display text-[13px] font-bold text-paper-muted">5</span>
-                            </div>
-                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Execute</p>
-                        </div>
-                    </div>
-                    {/* Feedback loop — simple dashed line from Execute back to Data Ingested */}
-                    <div className="mt-3 hidden sm:block w-full">
-                        <svg width="100%" height="30" viewBox="0 0 800 30" preserveAspectRatio="xMidYMid meet" fill="none">
+
+                        {/* Feedback loop — absolutely positioned U-shape under the nodes */}
+                        <svg
+                            className="absolute bottom-0 left-0 hidden sm:block"
+                            width="100%"
+                            height="40"
+                            preserveAspectRatio="none"
+                            fill="none"
+                            style={{ overflow: "visible" }}
+                        >
                             <defs>
-                                <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+                                <marker id="loopArrow" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
                                     <polygon points="6,0 0,3 6,6" fill="#9A9A8A" />
                                 </marker>
                             </defs>
-                            <path
-                                d="M700 4 C 760 4, 780 26, 700 26 L 100 26 C 20 26, 40 4, 100 4"
-                                stroke="#9A9A8A"
-                                strokeWidth="1"
-                                strokeDasharray="6 4"
-                                fill="none"
-                                markerEnd="url(#arrowLeft)"
-                            />
+                            {/* Line goes from ~90% (Execute center) down, across to ~10% (Data Ingested center), then up */}
+                            <line x1="90%" y1="0" x2="90%" y2="20" stroke="#9A9A8A" strokeWidth="1" strokeDasharray="4 3" />
+                            <line x1="90%" y1="20" x2="10%" y2="20" stroke="#9A9A8A" strokeWidth="1" strokeDasharray="4 3" />
+                            <line x1="10%" y1="20" x2="10%" y2="2" stroke="#9A9A8A" strokeWidth="1" strokeDasharray="4 3" markerEnd="url(#loopArrow)" />
                         </svg>
                     </div>
                 </motion.div>
