@@ -139,28 +139,24 @@ export default function WhyItMatters() {
                             <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Execute</p>
                         </div>
                     </div>
-                    {/* Feedback loop — full-width curved arrow from Execute back to Data Ingested */}
-                    <div className="mt-3 hidden sm:block w-full px-6">
-                        <svg width="100%" height="28" viewBox="0 0 100 28" preserveAspectRatio="none" fill="none">
+                    {/* Feedback loop — simple dashed line from Execute back to Data Ingested */}
+                    <div className="mt-3 hidden sm:block w-full">
+                        <svg width="100%" height="30" viewBox="0 0 800 30" preserveAspectRatio="xMidYMid meet" fill="none">
+                            <defs>
+                                <marker id="arrowLeft" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+                                    <polygon points="6,0 0,3 6,6" fill="#9A9A8A" />
+                                </marker>
+                            </defs>
                             <path
-                                d="M90 2 C 98 2, 100 14, 92 22 L 8 22 C 2 22, 0 14, 8 2"
+                                d="M700 4 C 760 4, 780 26, 700 26 L 100 26 C 20 26, 40 4, 100 4"
                                 stroke="#9A9A8A"
-                                strokeWidth="0.5"
-                                strokeDasharray="2 1.5"
+                                strokeWidth="1"
+                                strokeDasharray="6 4"
                                 fill="none"
-                                vectorEffect="non-scaling-stroke"
+                                markerEnd="url(#arrowLeft)"
                             />
                         </svg>
-                        <div className="flex items-center px-2 mt-[-6px]">
-                            <svg width="8" height="10" viewBox="0 0 8 10" className="shrink-0">
-                                <polygon points="0,5 8,0 8,10" fill="#9A9A8A" />
-                            </svg>
-                            <div className="flex-1" />
-                        </div>
                     </div>
-                    <p className="mt-1 text-center font-body text-[10px] text-paper-dim">
-                        Feedback loop — outcomes inform next cycle
-                    </p>
                 </motion.div>
 
                 <motion.div
