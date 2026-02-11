@@ -1,31 +1,37 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "@/lib/animations";
 import SectionLabel from "@/components/ui/section-label";
+import { Linkedin } from "lucide-react";
 
 const team = [
     {
-        initials: "HA",
+        photo: "/haamid.jpg",
         name: "Haamid Adam",
-        credentials: [
-            "MIT Sloan",
-            "Chartered Engineer",
-            "Offshore wind development — Japan & Taiwan",
-        ],
-        bio: "Built East Asia's first offshore wind farms with Siemens. Diligenced Deep Tech at DCVC.",
+        title: "MIT Sloan · Chartered Engineer",
+        linkedin: "https://linkedin.com/in/haamidadam",
+        summary:
+            "Built East Asia's first offshore wind farms with Siemens. Diligenced Deep Tech at DCVC.",
     },
     {
-        initials: "B",
-        name: "Brandon",
-        credentials: [],
-        bio: "",
+        photo: "/christian.jpg",
+        name: "Christian Cierny",
+        title: "Harvard T.H. Chan · Heidelberg University",
+        linkedin:
+            "https://www.linkedin.com/in/christian-cierny-579940378/",
+        summary:
+            "Trained to make decisions under real-world constraints. Brings clinical urgency, systems thinking, and distribution-first execution to Helm.",
     },
     {
-        initials: "C",
-        name: "Christian",
-        credentials: [],
-        bio: "",
+        photo: "/brandon.jpg",
+        name: "Brandon Karagozian",
+        title: "Harvard MPP",
+        linkedin:
+            "https://www.linkedin.com/in/brandon-karagozian/",
+        summary:
+            "Brings operational rigor and execution discipline to complex, high-stakes workflows.",
     },
 ];
 
@@ -48,34 +54,40 @@ export default function Team() {
                                 variants={fadeUp}
                                 className="flex flex-col"
                             >
-                                {/* Avatar placeholder */}
-                                <div className="flex h-24 w-24 items-center justify-center border border-paper-border bg-paper-surface">
-                                    <span className="font-display text-[22px] font-bold text-paper-dim">
-                                        {member.initials}
-                                    </span>
+                                {/* Headshot */}
+                                <div className="relative h-28 w-28 overflow-hidden rounded-full border border-paper-border">
+                                    <Image
+                                        src={member.photo}
+                                        alt={member.name}
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
 
-                                {/* Info */}
-                                <h3 className="mt-4 font-display text-[22px] font-bold text-paper-text">
-                                    {member.name}
-                                </h3>
-                                {member.credentials.length > 0 && (
-                                    <div className="mt-2 space-y-0.5 font-body text-[14px] text-paper-muted">
-                                        {member.credentials.map((c) => (
-                                            <p key={c}>{c}</p>
-                                        ))}
-                                    </div>
-                                )}
-                                {member.bio && (
-                                    <p className="mt-3 font-body text-[14px] leading-[1.65] text-paper-muted">
-                                        {member.bio}
-                                    </p>
-                                )}
-                                {!member.bio && member.credentials.length === 0 && (
-                                    <p className="mt-2 font-body text-[13px] italic text-paper-dim">
-                                        Details coming soon
-                                    </p>
-                                )}
+                                {/* Name + LinkedIn */}
+                                <div className="mt-4 flex items-center gap-2">
+                                    <h3 className="font-display text-[22px] font-bold text-paper-text">
+                                        {member.name}
+                                    </h3>
+                                    <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-paper-dim transition-colors hover:text-paper-text"
+                                    >
+                                        <Linkedin className="h-4 w-4" strokeWidth={1.5} />
+                                    </a>
+                                </div>
+
+                                {/* Title */}
+                                <p className="mt-1 font-body text-[14px] text-paper-muted">
+                                    {member.title}
+                                </p>
+
+                                {/* Summary */}
+                                <p className="mt-3 font-body text-[14px] leading-[1.65] text-paper-muted">
+                                    {member.summary}
+                                </p>
                             </motion.div>
                         ))}
                     </div>
