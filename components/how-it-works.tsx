@@ -14,9 +14,6 @@ const columns = [
   {
     icon: Database,
     heading: "Inputs",
-    color: "text-paper-muted",
-    borderColor: "border-paper-border",
-    bgColor: "bg-paper-bg",
     items: [
       "Turbine alarms (SCADA)",
       "Weather forecasts",
@@ -28,9 +25,6 @@ const columns = [
   {
     icon: BrainCircuit,
     heading: "Agents",
-    color: "text-paper-muted",
-    borderColor: "border-paper-border",
-    bgColor: "bg-paper-bg",
     items: [
       "Triage agent",
       "Weather-window agent",
@@ -42,9 +36,6 @@ const columns = [
   {
     icon: Scale,
     heading: "Decisions",
-    color: "text-paper-muted",
-    borderColor: "border-paper-border",
-    bgColor: "bg-paper-bg",
     items: [
       "Prioritised task list",
       "Crew–vessel pairing",
@@ -56,9 +47,6 @@ const columns = [
   {
     icon: Rocket,
     heading: "Outcomes",
-    color: "text-teal-dark",
-    borderColor: "border-teal",
-    bgColor: "bg-teal/10",
     items: [
       "Morning plan published",
       "Team mobilised",
@@ -96,7 +84,7 @@ export default function HowItWorks() {
           </motion.p>
         </motion.div>
 
-        {/* Connected pipeline: node → arrow → node → arrow → ... with cards below */}
+        {/* Connected pipeline — nodes use same 4-col grid as cards to align perfectly */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -104,48 +92,42 @@ export default function HowItWorks() {
           variants={stagger}
           className="mt-14"
         >
-          {/* Pipeline header row: circles + arrows */}
-          <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-0">
+          {/* Pipeline header row — 4-col grid matching cards */}
+          <div className="hidden lg:grid lg:grid-cols-4">
             {columns.map((col, i) => {
               const Icon = col.icon;
+              const isLast = i === columns.length - 1;
               return (
-                <motion.div key={col.heading} variants={fadeUp} className="flex items-center">
-                  {/* Node */}
-                  <div className="flex flex-col items-center">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-full border-2 ${col.borderColor} ${col.bgColor}`}>
-                      <Icon className={`h-6 w-6 ${col.color}`} strokeWidth={1.5} />
-                    </div>
-                    <p className={`mt-2 font-display text-[13px] font-bold ${i === columns.length - 1 ? "text-teal-dark" : "text-paper-text"}`}>
-                      {col.heading}
-                    </p>
+                <motion.div key={col.heading} variants={fadeUp} className="relative flex flex-col items-center">
+                  {/* Node circle */}
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-full border ${isLast ? "border-teal bg-teal/10" : "border-paper-border bg-paper-bg"}`}>
+                    <Icon className={`h-5 w-5 ${isLast ? "text-teal-dark" : "text-paper-muted"}`} strokeWidth={1.5} />
                   </div>
-                  {/* Arrow between nodes */}
+                  <p className={`mt-2 font-display text-[13px] font-bold ${isLast ? "text-teal-dark" : "text-paper-text"}`}>
+                    {col.heading}
+                  </p>
+                  {/* Dashed arrow to next node — spans from right edge of this cell to left edge of next */}
                   {i < columns.length - 1 && (
-                    <div className="mx-6 flex items-center">
-                      <div className="w-16 border-t border-dashed border-paper-dim" />
-                      <svg width="8" height="12" viewBox="0 0 8 12" className="ml-[-1px]">
-                        <polygon points="0,0 8,6 0,12" fill="#9A9A8A" />
-                      </svg>
+                    <div className="absolute top-6 left-[calc(50%+30px)] right-[-50%+30px]" style={{ right: "calc(-50% + 30px)" }}>
+                      <div className="flex items-center w-full">
+                        <div className="flex-1 border-t border-dashed border-paper-dim" />
+                        <svg width="6" height="10" viewBox="0 0 6 10" className="shrink-0 ml-[-1px]">
+                          <polygon points="0,0 6,5 0,10" fill="#9A9A8A" />
+                        </svg>
+                      </div>
                     </div>
                   )}
+                  {/* Vertical connector down to card */}
+                  <div className="mt-2 h-4 w-px border-l border-dashed border-paper-dim" />
                 </motion.div>
               );
             })}
           </div>
 
-          {/* Vertical connectors from pipeline nodes to cards */}
-          <div className="hidden lg:grid lg:grid-cols-4 mt-3">
-            {columns.map((col) => (
-              <div key={col.heading} className="flex justify-center">
-                <div className="h-6 w-px border-l border-dashed border-paper-dim" />
-              </div>
-            ))}
-          </div>
-
           {/* 4-column detail grid */}
           <motion.div
             variants={stagger}
-            className="mt-0 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4"
           >
             {columns.map((col, i) => {
               const Icon = col.icon;

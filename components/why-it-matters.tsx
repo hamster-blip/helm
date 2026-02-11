@@ -139,18 +139,24 @@ export default function WhyItMatters() {
                             <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Execute</p>
                         </div>
                     </div>
-                    {/* Feedback loop — curved arrow back from Execute to Data Ingested */}
-                    <div className="mt-4 flex items-center justify-center gap-2">
-                        <svg width="420" height="32" viewBox="0 0 420 32" fill="none" className="hidden sm:block">
+                    {/* Feedback loop — full-width curved arrow from Execute back to Data Ingested */}
+                    <div className="mt-3 hidden sm:block w-full px-6">
+                        <svg width="100%" height="28" viewBox="0 0 100 28" preserveAspectRatio="none" fill="none">
                             <path
-                                d="M380 4 C 400 4, 410 16, 400 28 L 20 28 C 10 28, 2 16, 20 4"
+                                d="M90 2 C 98 2, 100 14, 92 22 L 8 22 C 2 22, 0 14, 8 2"
                                 stroke="#9A9A8A"
-                                strokeWidth="1"
-                                strokeDasharray="4 3"
+                                strokeWidth="0.5"
+                                strokeDasharray="2 1.5"
                                 fill="none"
+                                vectorEffect="non-scaling-stroke"
                             />
-                            <polygon points="20,0 28,4 20,8" fill="#9A9A8A" />
                         </svg>
+                        <div className="flex items-center px-2 mt-[-6px]">
+                            <svg width="8" height="10" viewBox="0 0 8 10" className="shrink-0">
+                                <polygon points="0,5 8,0 8,10" fill="#9A9A8A" />
+                            </svg>
+                            <div className="flex-1" />
+                        </div>
                     </div>
                     <p className="mt-1 text-center font-body text-[10px] text-paper-dim">
                         Feedback loop — outcomes inform next cycle
