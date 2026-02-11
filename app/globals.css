@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg-primary: #0A0E14;
-  --color-bg-alt: #0C1018;
-  --color-bg-footer: #080B10;
-  --color-surface: #111822;
-  --color-border: #1A2632;
+  /* Paper palette — the entire site */
+  --color-paper-bg: #F4F1EA;
+  --color-paper-surface: #FDFCF9;
+  --color-paper-border: #D4CFC4;
+  --color-paper-text: #1A1A1A;
+  --color-paper-muted: #5A5A52;
+  --color-paper-dim: #9A9A8A;
+
+  /* Accent */
   --color-teal: #00D4AA;
-  --color-orange: #FF8400;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #667788;
-  --color-text-muted: #99AABB;
-  --color-text-dim: #334455;
-  --color-text-light: #CCDDEE;
-  --font-heading: var(--font-oswald);
-  --font-mono: var(--font-jetbrains);
+  --color-teal-dark: #00A085;
+  --color-orange: #C0392B;
+
+  /* Fonts */
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
 }
 
 html {
@@ -22,7 +24,24 @@ html {
 }
 
 body {
-  background: #0A0E14;
-  color: #FFFFFF;
-  font-family: var(--font-mono);
+  background: var(--color-paper-bg);
+  color: var(--color-paper-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global paper grain texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(ellipse at 15% 25%, rgba(0,0,0,0.03) 0.5px, transparent 0.5px),
+    radial-gradient(ellipse at 85% 75%, rgba(0,0,0,0.025) 0.5px, transparent 0.5px),
+    radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.02) 0.3px, transparent 0.3px);
+  background-size: 4px 3px, 5px 4px, 3px 5px;
 }

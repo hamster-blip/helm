@@ -1,23 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { fadeInLeft } from "@/lib/animations";
+import { ReactNode } from "react";
 
 interface SectionLabelProps {
-  text: string;
-  color?: string;
+  children: ReactNode;
 }
 
-export default function SectionLabel({ text, color = "text-teal" }: SectionLabelProps) {
+export default function SectionLabel({ children }: SectionLabelProps) {
   return (
-    <motion.p
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={fadeInLeft}
-      className={`font-mono text-xs font-medium tracking-[2px] ${color}`}
-    >
-      {text}
-    </motion.p>
+    <span className="font-body text-[11px] font-semibold tracking-[2px] uppercase text-paper-muted">
+      {children}
+    </span>
   );
 }

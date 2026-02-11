@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Ink-style shield with checkmark -->
+
+  <!-- Shield outline -->
+  <path d="M200 40 L280 75 L280 170 Q280 225 200 265 Q120 225 120 170 L120 75 Z" 
+        stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+        opacity="0.7" fill="#2C2C2C" fill-opacity="0.03"/>
+  
+  <!-- Inner shield line -->
+  <path d="M200 55 L268 85 L268 168 Q268 215 200 250 Q132 215 132 168 L132 85 Z" 
+        stroke="#2C2C2C" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" 
+        opacity="0.25" fill="none"/>
+
+  <!-- Checkmark inside -->
+  <path d="M170 150 L190 172 L232 122" 
+        stroke="#2C2C2C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" 
+        opacity="0.55" fill="none"/>
+  
+  <!-- Horizontal detail lines -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.12">
+    <line x1="155" y1="100" x2="245" y2="100" stroke-width="0.6"/>
+    <line x1="150" y1="200" x2="250" y2="200" stroke-width="0.6"/>
+  </g>
+
+  <!-- Ink splatter accents -->
+  <g fill="#2C2C2C" opacity="0.1">
+    <circle cx="115" cy="90" r="2.5"/>
+    <circle cx="108" cy="98" r="1.2"/>
+    <circle cx="288" cy="85" r="2"/>
+    <circle cx="292" cy="92" r="1"/>
+    <circle cx="125" cy="230" r="1.8"/>
+    <circle cx="275" cy="225" r="1.5"/>
+  </g>
+</svg>

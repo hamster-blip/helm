@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Helm Compass / Helm Wheel -->
+  
+  <!-- Outer ring -->
+  <circle cx="200" cy="150" r="90" stroke="#2C2C2C" stroke-width="2" opacity="0.75"/>
+  <circle cx="200" cy="150" r="85" stroke="#2C2C2C" stroke-width="0.7" opacity="0.35"/>
+  
+  <!-- Inner ring -->
+  <circle cx="200" cy="150" r="35" stroke="#2C2C2C" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Center hub -->
+  <circle cx="200" cy="150" r="6" fill="#2C2C2C" opacity="0.25"/>
+  <circle cx="200" cy="150" r="3" fill="#2C2C2C" opacity="0.45"/>
+  
+  <!-- Spokes (cardinal) -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.65">
+    <line x1="200" y1="115" x2="200" y2="62" stroke-width="2"/>
+    <line x1="200" y1="185" x2="200" y2="238" stroke-width="1.5"/>
+    <line x1="235" y1="150" x2="288" y2="150" stroke-width="1.5"/>
+    <line x1="165" y1="150" x2="112" y2="150" stroke-width="1.5"/>
+  </g>
+  <!-- Spokes (ordinal) -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.4">
+    <line x1="225" y1="125" x2="264" y2="86" stroke-width="1.1"/>
+    <line x1="175" y1="125" x2="136" y2="86" stroke-width="1.1"/>
+    <line x1="225" y1="175" x2="264" y2="214" stroke-width="1.1"/>
+    <line x1="175" y1="175" x2="136" y2="214" stroke-width="1.1"/>
+  </g>
+  
+  <!-- Compass needle — north pointer -->
+  <path d="M200 60 L195 78 L200 72 L205 78 Z" fill="#2C2C2C" opacity="0.55"/>
+  
+  <!-- Tick marks -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.35">
+    <line x1="200" y1="60" x2="200" y2="54" stroke-width="1.2"/>
+    <line x1="200" y1="240" x2="200" y2="246" stroke-width="1"/>
+    <line x1="290" y1="150" x2="296" y2="150" stroke-width="1"/>
+    <line x1="110" y1="150" x2="104" y2="150" stroke-width="1"/>
+  </g>
+  
+  <!-- Cardinal labels -->
+  <g fill="#2C2C2C" font-family="sans-serif" opacity="0.4" text-anchor="middle">
+    <text x="200" y="48" font-size="9" font-weight="600">N</text>
+    <text x="200" y="260" font-size="8">S</text>
+    <text x="304" y="153" font-size="8">E</text>
+    <text x="96" y="153" font-size="8">W</text>
+  </g>
+  
+  <!-- Ink splatter accents -->
+  <g fill="#2C2C2C" opacity="0.1">
+    <circle cx="165" cy="88" r="2.5"/>
+    <circle cx="240" cy="210" r="2"/>
+    <circle cx="260" cy="95" r="1.5"/>
+    <circle cx="140" cy="195" r="1.8"/>
+  </g>
+</svg>

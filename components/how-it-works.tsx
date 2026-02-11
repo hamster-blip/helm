@@ -1,118 +1,142 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainerSlow } from "@/lib/animations";
-import { ArrowRight } from "lucide-react";
+import { fadeUp, fadeIn, stagger } from "@/lib/animations";
 import SectionLabel from "@/components/ui/section-label";
-import ScrollReveal from "@/components/ui/scroll-reveal";
+import Image from "next/image";
+import {
+  Database,
+  BrainCircuit,
+  Scale,
+  Rocket,
+} from "lucide-react";
 
 const columns = [
   {
-    header: "INPUTS",
+    icon: Database,
+    heading: "Inputs",
     items: [
-      "Fault flags / alarms",
-      "Weather + wave forecasts",
-      "Access constraints",
-      "Crew rosters + certs",
-      "Vessel availability",
-      "Inventory signals",
+      "Turbine alarms (SCADA)",
+      "Weather forecasts",
+      "Crew rosters & certs",
+      "Vessel schedules",
+      "Parts inventory",
     ],
   },
   {
-    header: "AGENTS",
+    icon: BrainCircuit,
+    heading: "Agents",
     items: [
-      { name: "Planning Agent", desc: "Builds the daily plan" },
-      { name: "Replanning Agent", desc: "Updates as conditions change" },
-      { name: "Constraints Agent", desc: "Enforces safety + certs + access" },
-      { name: "Parts Readiness Agent", desc: "Flags inventory + lead-time risk" },
-      { name: "Closeout Agent", desc: "Converts notes into learning" },
+      "Triage agent",
+      "Weather-window agent",
+      "Crew-match agent",
+      "Logistics agent",
+      "Risk-scoring agent",
     ],
   },
   {
-    header: "DECISIONS",
+    icon: Scale,
+    heading: "Decisions",
     items: [
-      "Ranked priorities",
-      "Mobilisation plan",
-      "Crew + vessel assignments",
-      "Act now / defer / monitor",
-      "Confidence + constraints",
+      "Prioritised task list",
+      "Crew–vessel pairing",
+      "Go / No-Go recommendation",
+      "Confidence score",
+      "Escalation flags",
     ],
   },
   {
-    header: "OUTCOMES",
+    icon: Rocket,
+    heading: "Outcomes",
     items: [
-      "Faster mobilisation",
-      "Fewer aborted missions",
-      "Reduced downtime",
-      "Scalable operations",
-      "Lower headcount growth",
+      "Morning plan published",
+      "Team mobilised",
+      "Audit trail logged",
+      "KPIs updated live",
+      "Feedback loop closed",
     ],
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative bg-bg-primary px-16 py-24">
-      {/* Background accent */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-teal/[0.02] blur-[100px]" />
-      </div>
-
-      <div className="relative z-10">
-        <div className="flex flex-col items-center gap-5">
-          <SectionLabel text="// HOW_HELM_WORKS" />
-          <ScrollReveal>
-            <h2 className="text-center font-heading text-[56px] font-bold text-text-primary">
-              Inputs. Agents. Decisions. Outcomes.
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal>
-            <p className="max-w-[700px] text-center font-mono text-base leading-[1.7] text-text-secondary">
-              Helm runs a continuous loop. Operational signals flow in. Ranked, cost-aware plans flow out.
-            </p>
-          </ScrollReveal>
-        </div>
-
+    <section id="how-it-works" className="relative py-24 px-6">
+      <div className="mx-auto max-w-[1100px]">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainerSlow}
-          className="mt-16 grid grid-cols-4 gap-0"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={stagger}
+          className="text-center"
         >
-          {columns.map((col, colIdx) => (
-            <motion.div key={col.header} variants={fadeUp} className="relative flex flex-col">
-              {/* Arrow connector */}
-              {colIdx < 3 && (
-                <div className="absolute -right-3 top-8 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-bg-primary">
-                  <ArrowRight className="h-3 w-3 text-teal" strokeWidth={2} />
-                </div>
-              )}
-              <div className="bg-teal px-5 py-4">
-                <span className="font-mono text-xs font-bold tracking-[2px] text-bg-primary">
-                  {col.header}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col gap-4 border border-border bg-surface p-6">
-                {col.items.map((item) =>
-                  typeof item === "string" ? (
-                    <p key={item} className="font-mono text-sm leading-[1.6] text-text-muted">
+          <SectionLabel>How Helm Works</SectionLabel>
+          <motion.h2
+            variants={fadeUp}
+            className="mt-4 font-display text-[40px] font-bold leading-[1.08] tracking-tight text-paper-text"
+          >
+            The Agentic Pipeline
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            className="mx-auto mt-4 max-w-[560px] font-body text-[16px] leading-[1.7] text-paper-muted"
+          >
+            Multiple specialised AI agents work in concert — each responsible for one
+            domain — producing a unified plan every morning.
+          </motion.p>
+        </motion.div>
+
+        {/* Flow diagram SVG — now serves as the only "Inputs → Outcomes" visual */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="mt-10 flex justify-center"
+        >
+          <Image
+            src="/ink-flow.svg"
+            alt="Agentic pipeline flow"
+            width={750}
+            height={375}
+          />
+        </motion.div>
+
+        {/* 4-column detail grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          variants={stagger}
+          className="mt-6 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {columns.map((col, i) => {
+            const Icon = col.icon;
+            return (
+              <motion.div
+                key={col.heading}
+                variants={fadeUp}
+                className="border border-paper-border bg-paper-surface p-6"
+                style={{
+                  borderLeft: i === 0 ? undefined : "none",
+                }}
+              >
+                <Icon className="mb-4 h-5 w-5 text-paper-muted" strokeWidth={1.5} />
+                <h3 className="font-display text-[16px] font-bold text-paper-text">
+                  {col.heading}
+                </h3>
+                <ul className="mt-4 space-y-2">
+                  {col.items.map((item) => (
+                    <li
+                      key={item}
+                      className="font-body text-[13px] leading-[1.6] text-paper-muted"
+                    >
                       {item}
-                    </p>
-                  ) : (
-                    <div key={item.name} className="flex flex-col gap-1">
-                      <span className="font-heading text-base font-semibold text-text-primary">
-                        {item.name}
-                      </span>
-                      <span className="font-mono text-xs leading-[1.5] text-text-secondary">
-                        {item.desc}
-                      </span>
-                    </div>
-                  )
-                )}
-              </div>
-            </motion.div>
-          ))}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

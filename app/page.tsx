@@ -1,14 +1,11 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
-import Divider from "@/components/ui/divider";
-import Reality from "@/components/reality";
-import Consequences from "@/components/consequences";
-import Insight from "@/components/insight";
+import InkDivider from "@/components/ui/ink-divider";
+import CoreProblem from "@/components/core-problem";
+import Solution from "@/components/solution";
 import HowItWorks from "@/components/how-it-works";
-import Guardrails from "@/components/guardrails";
-import Metrics from "@/components/metrics";
-import Expansion from "@/components/expansion";
-import Founder from "@/components/founder";
+import WhyItMatters from "@/components/why-it-matters";
+import Team from "@/components/team";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 
@@ -17,21 +14,28 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        {/* Dark: Hero */}
         <Hero />
-        <Divider />
-        <Reality />
-        <Consequences />
-        <Divider color="teal" />
-        <Insight />
-        <Divider />
+
+        {/* Paper: Ink divider — brand signature moment */}
+        <InkDivider />
+
+        {/* Paper: Core Problem */}
+        <CoreProblem />
+
+        {/* Dark: Solution */}
+        <Solution />
+
+        {/* Dark: How It Works */}
         <HowItWorks />
-        <Guardrails />
-        <Divider />
-        <Metrics />
-        <Expansion />
-        <Divider />
-        <Founder />
-        <Divider color="teal" />
+
+        {/* Dark: Why It Matters + Guardrails + Metrics */}
+        <WhyItMatters />
+
+        {/* Paper: Team */}
+        <Team />
+
+        {/* Dark: CTA */}
         <CTA />
       </main>
       <Footer />

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <!-- Foreground turbine (center) -->
+  <g stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 280 L397 105" stroke-width="2.2" />
+    <path d="M406 280 L403 105" stroke-width="2.2" />
+    <path d="M389 103 L411 103 L413 93 L387 93 Z" stroke-width="1.5" fill="#2C2C2C" fill-opacity="0.04" />
+    <path d="M400 95 C398 72 397 42 399 12" stroke-width="2" />
+    <path d="M400 95 C402 72 403 42 401 12" stroke-width="1" />
+    <path d="M400 95 C422 112 448 134 468 152" stroke-width="2" />
+    <path d="M400 95 C420 114 444 138 462 156" stroke-width="1" />
+    <path d="M400 95 C378 112 352 134 332 152" stroke-width="2" />
+    <path d="M400 95 C380 114 356 138 338 156" stroke-width="1" />
+    <circle cx="400" cy="95" r="5" stroke-width="1.5" fill="#2C2C2C" fill-opacity="0.08" />
+    <line x1="388" y1="260" x2="412" y2="260" stroke-width="1.2" />
+  </g>
+
+  <!-- Mid-ground turbine (left) -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.4">
+    <path d="M175 280 L173 155" stroke-width="1.5" />
+    <path d="M181 280 L179 155" stroke-width="1.5" />
+    <path d="M167 153 L187 153 L188 145 L166 145 Z" stroke-width="1" />
+    <path d="M177 148 C175 128 174 102 176 76" stroke-width="1.5" />
+    <path d="M177 148 C194 162 214 178 228 190" stroke-width="1.5" />
+    <path d="M177 148 C160 162 140 178 126 190" stroke-width="1.5" />
+    <circle cx="177" cy="148" r="3.5" stroke-width="1" />
+  </g>
+
+  <!-- Background turbine (right) -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.22">
+    <path d="M640 280 L639 185" stroke-width="1" />
+    <path d="M646 280 L645 185" stroke-width="1" />
+    <path d="M634 183 L650 183 L651 177 L633 177 Z" stroke-width="0.8" />
+    <path d="M642 179 C641 163 640 143 642 124" stroke-width="1" />
+    <path d="M642 179 C654 189 668 201 678 211" stroke-width="1" />
+    <path d="M642 179 C630 189 616 201 606 211" stroke-width="1" />
+    <circle cx="642" cy="179" r="2.5" stroke-width="0.8" />
+  </g>
+
+  <!-- Far background turbine -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.12">
+    <path d="M510 280 L509 210" stroke-width="0.8" />
+    <path d="M514 280 L513 210" stroke-width="0.8" />
+    <path d="M512 206 C511 194 510 179 512 165" stroke-width="0.8" />
+    <path d="M512 206 C521 213 532 222 539 228" stroke-width="0.8" />
+    <path d="M512 206 C503 213 492 222 485 228" stroke-width="0.8" />
+    <circle cx="512" cy="206" r="2" stroke-width="0.6" />
+  </g>
+
+  <!-- Water / waves -->
+  <g stroke="#2C2C2C" stroke-linecap="round" opacity="0.12">
+    <path d="M0 285 Q40 278 80 285 Q120 292 160 285 Q200 278 240 285 Q280 292 320 285 Q360 278 400 285 Q440 292 480 285 Q520 278 560 285 Q600 292 640 285 Q680 278 720 285 Q760 292 800 285" stroke-width="0.8" />
+    <path d="M20 296 Q60 290 100 296 Q140 302 180 296 Q220 290 260 296 Q300 302 340 296 Q380 290 420 296 Q460 302 500 296 Q540 290 580 296 Q620 302 660 296 Q700 290 740 296 Q780 302 800 296" stroke-width="0.6" />
+  </g>
+
+  <!-- Horizon -->
+  <line x1="0" y1="280" x2="800" y2="280" stroke="#2C2C2C" stroke-width="0.3" opacity="0.08" />
+
+  <!-- Birds -->
+  <g stroke="#2C2C2C" stroke-width="0.7" stroke-linecap="round" opacity="0.25">
+    <path d="M285 55 Q290 50 295 55" />
+    <path d="M305 46 Q311 40 317 46" />
+    <path d="M540 62 Q544 58 548 62" />
+  </g>
+</svg>

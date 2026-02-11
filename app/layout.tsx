@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Oswald, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
-const oswald = Oswald({
-  variable: "--font-oswald",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Helm — Mission Control for Offshore Wind O&M",
     description:
-      "Agentic AI that runs your daily planning and mobilisation loop. One system. One plan. Every morning.",
+      "Agentic AI that runs your daily planning and mobilisation loop.",
     type: "website",
   },
 };
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${oswald.variable} ${jetbrains.variable} antialiased`}>
+      <body className={`${spaceGrotesk.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>

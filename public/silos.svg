@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" fill="none">
+  <!-- Decision latency timeline — showing how long it takes WITHOUT coordination -->
+  <!-- This is a real data-style visual showing the manual decision process -->
+
+  <!-- Title -->
+  <text x="24" y="24" font-family="sans-serif" font-size="10" fill="#2C2C2C" font-weight="600" opacity="0.6" letter-spacing="1.5">TYPICAL MORNING DECISION CYCLE</text>
+
+  <!-- Time axis -->
+  <line x1="24" y1="50" x2="460" y2="50" stroke="#2C2C2C" stroke-width="0.5" opacity="0.2"/>
+  <g fill="#2C2C2C" font-family="sans-serif" font-size="8" opacity="0.35">
+    <text x="24" y="44">05:00</text>
+    <text x="112" y="44">06:00</text>
+    <text x="200" y="44">07:00</text>
+    <text x="288" y="44">08:00</text>
+    <text x="376" y="44">09:00</text>
+    <text x="445" y="44">10:00</text>
+  </g>
+  <!-- Tick marks -->
+  <g stroke="#2C2C2C" stroke-width="0.4" opacity="0.15">
+    <line x1="24" y1="48" x2="24" y2="52"/>
+    <line x1="112" y1="48" x2="112" y2="52"/>
+    <line x1="200" y1="48" x2="200" y2="52"/>
+    <line x1="288" y1="48" x2="288" y2="52"/>
+    <line x1="376" y1="48" x2="376" y2="52"/>
+    <line x1="460" y1="48" x2="460" y2="52"/>
+  </g>
+
+  <!-- Row 1: Check SCADA alarms -->
+  <g>
+    <text x="24" y="82" font-family="sans-serif" font-size="9" fill="#2C2C2C" opacity="0.55">Check SCADA alarms</text>
+    <rect x="24" y="88" width="100" height="10" rx="1" fill="#2C2C2C" opacity="0.12"/>
+    <rect x="24" y="88" width="100" height="10" rx="1" stroke="#2C2C2C" stroke-width="0.5" opacity="0.2" fill="none"/>
+  </g>
+
+  <!-- Row 2: Pull weather data -->
+  <g>
+    <text x="24" y="118" font-family="sans-serif" font-size="9" fill="#2C2C2C" opacity="0.55">Pull weather forecasts</text>
+    <rect x="90" y="124" width="130" height="10" rx="1" fill="#2C2C2C" opacity="0.10"/>
+    <rect x="90" y="124" width="130" height="10" rx="1" stroke="#2C2C2C" stroke-width="0.5" opacity="0.2" fill="none"/>
+    <!-- Wait gap -->
+    <rect x="124" y="88" width="2" height="46" fill="#C0392B" opacity="0.12"/>
+    <text x="128" y="115" font-family="sans-serif" font-size="7" fill="#C0392B" opacity="0.35">wait</text>
+  </g>
+
+  <!-- Row 3: Check crew availability -->
+  <g>
+    <text x="24" y="154" font-family="sans-serif" font-size="9" fill="#2C2C2C" opacity="0.55">Email crew coordinators</text>
+    <rect x="160" y="160" width="140" height="10" rx="1" fill="#2C2C2C" opacity="0.08"/>
+    <rect x="160" y="160" width="140" height="10" rx="1" stroke="#2C2C2C" stroke-width="0.5" opacity="0.2" fill="none"/>
+    <!-- Wait gap -->
+    <rect x="220" y="124" width="2" height="46" fill="#C0392B" opacity="0.12"/>
+    <text x="224" y="150" font-family="sans-serif" font-size="7" fill="#C0392B" opacity="0.35">wait</text>
+  </g>
+
+  <!-- Row 4: Call vessel operator -->
+  <g>
+    <text x="24" y="190" font-family="sans-serif" font-size="9" fill="#2C2C2C" opacity="0.55">Call vessel operator</text>
+    <rect x="240" y="196" width="100" height="10" rx="1" fill="#2C2C2C" opacity="0.08"/>
+    <rect x="240" y="196" width="100" height="10" rx="1" stroke="#2C2C2C" stroke-width="0.5" opacity="0.2" fill="none"/>
+    <!-- Wait gap -->
+    <rect x="300" y="160" width="2" height="46" fill="#C0392B" opacity="0.12"/>
+    <text x="304" y="186" font-family="sans-serif" font-size="7" fill="#C0392B" opacity="0.35">wait</text>
+  </g>
+
+  <!-- Row 5: Check inventory -->
+  <g>
+    <text x="24" y="226" font-family="sans-serif" font-size="9" fill="#2C2C2C" opacity="0.55">Check parts inventory</text>
+    <rect x="300" y="232" width="80" height="10" rx="1" fill="#2C2C2C" opacity="0.08"/>
+    <rect x="300" y="232" width="80" height="10" rx="1" stroke="#2C2C2C" stroke-width="0.5" opacity="0.2" fill="none"/>
+  </g>
+
+  <!-- Row 6: Make decision -->
+  <g>
+    <text x="24" y="262" font-family="sans-serif" font-size="9" fill="#2C2C2C" opacity="0.55" font-weight="600">Final decision</text>
+    <rect x="380" y="268" width="70" height="10" rx="1" fill="#C0392B" opacity="0.15"/>
+    <rect x="380" y="268" width="70" height="10" rx="1" stroke="#C0392B" stroke-width="0.8" opacity="0.35" fill="none"/>
+  </g>
+
+  <!-- Total time bracket -->
+  <g stroke="#C0392B" stroke-width="0.8" opacity="0.4" fill="none">
+    <path d="M24 295 L24 290 L450 290 L450 295"/>
+  </g>
+  <text x="237" y="308" font-family="sans-serif" font-size="10" fill="#C0392B" opacity="0.5" text-anchor="middle" font-weight="600">~4-5 hours of sequential, manual work</text>
+
+  <!-- Helm comparison line -->
+  <g>
+    <rect x="24" y="328" width="50" height="10" rx="1" fill="#00D4AA" opacity="0.25"/>
+    <rect x="24" y="328" width="50" height="10" rx="1" stroke="#00A085" stroke-width="0.8" opacity="0.5" fill="none"/>
+    <text x="82" y="337" font-family="sans-serif" font-size="9" fill="#00A085" opacity="0.7" font-weight="600">With Helm: ~15 minutes</text>
+  </g>
+</svg>
