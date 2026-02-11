@@ -106,8 +106,8 @@ export default function CoreProblem() {
                             <div key={row.label} className="flex items-center gap-4">
                                 <span
                                     className={`w-[180px] shrink-0 text-right font-body text-[13px] ${row.highlight
-                                            ? "font-semibold text-orange"
-                                            : "text-paper-muted"
+                                        ? "font-semibold text-orange"
+                                        : "text-paper-muted"
                                         }`}
                                 >
                                     {row.label}
@@ -115,8 +115,8 @@ export default function CoreProblem() {
                                 <div className="relative flex-1">
                                     <div
                                         className={`h-5 rounded-sm ${row.highlight
-                                                ? "border border-orange bg-orange/10"
-                                                : "border border-paper-border bg-paper-bg"
+                                            ? "border border-orange bg-orange/10"
+                                            : "border border-paper-border bg-paper-bg"
                                             }`}
                                         style={{
                                             marginLeft: `${row.start}%`,
@@ -148,14 +148,15 @@ export default function CoreProblem() {
                             With Helm
                         </span>
                         <div className="relative flex-1">
-                            <div
-                                className="h-5 rounded-sm border border-teal bg-teal/15"
-                                style={{ width: "6%" }}
-                            />
+                            <div className="flex items-center gap-3" style={{ width: "18%" }}>
+                                <div
+                                    className="h-5 flex-1 rounded-sm border border-teal bg-teal/15"
+                                />
+                                <span className="whitespace-nowrap font-body text-[12px] font-semibold text-teal-dark">
+                                    ~15 min
+                                </span>
+                            </div>
                         </div>
-                        <span className="font-body text-[12px] font-semibold text-teal-dark">
-                            ~15 min
-                        </span>
                     </div>
                 </motion.div>
 

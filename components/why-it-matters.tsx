@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { fadeUp, fadeIn, stagger } from "@/lib/animations";
 import SectionLabel from "@/components/ui/section-label";
-import Image from "next/image";
 import { ShieldCheck, FileText, Gauge, Lock, UserCheck, CheckCircle } from "lucide-react";
 
 const guardrails = [
@@ -41,7 +40,7 @@ const guardrails = [
 
 const metrics = [
     { label: "Downtime", value: "−40%", note: "Faster mobilisation, fewer weather-miss days", pct: 40 },
-    { label: "Resource Optimisation", value: "−30%", note: "Planning hours redeployed from routine scheduling to high-value decisions", pct: 30 },
+    { label: "Resource Optimisation", value: "+30%", note: "Planning hours redeployed from routine scheduling to high-value decisions", pct: 30 },
     { label: "Availability", value: "+5 pts", note: "Better weather-window utilisation", pct: 60 },
     { label: "Post-Warranty", value: "−25%", note: "O&M cost reduction through optimised logistics", pct: 25 },
 ];
@@ -74,21 +73,72 @@ export default function WhyItMatters() {
                     </motion.p>
                 </motion.div>
 
-                {/* Shield SVG centered under heading */}
+                {/* Human-in-the-loop flow diagram */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeIn}
-                    className="mt-6 flex justify-center"
+                    className="mx-auto mt-10 max-w-[800px] border border-paper-border bg-paper-surface p-8"
                 >
-                    <Image
-                        src="/ink-shield.svg"
-                        alt="Trust shield"
-                        width={140}
-                        height={110}
-                        className="opacity-70"
-                    />
+                    <p className="mb-6 text-center font-body text-[11px] font-semibold tracking-[2px] text-paper-dim">
+                        HUMAN-IN-THE-LOOP FLOW
+                    </p>
+                    {/* Flow: Data → Agents → Recommendation → Human → Action */}
+                    <div className="flex flex-col items-center gap-0 sm:flex-row sm:items-center sm:justify-center sm:gap-0">
+                        {/* Step 1 */}
+                        <div className="flex flex-col items-center">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                <span className="font-display text-[13px] font-bold text-paper-muted">1</span>
+                            </div>
+                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Data Ingested</p>
+                        </div>
+                        {/* Arrow */}
+                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
+                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                        {/* Step 2 */}
+                        <div className="flex flex-col items-center">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                <span className="font-display text-[13px] font-bold text-paper-muted">2</span>
+                            </div>
+                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Agents Reason</p>
+                        </div>
+                        {/* Arrow */}
+                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
+                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                        {/* Step 3 */}
+                        <div className="flex flex-col items-center">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                <span className="font-display text-[13px] font-bold text-paper-muted">3</span>
+                            </div>
+                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Plan Proposed</p>
+                        </div>
+                        {/* Arrow */}
+                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
+                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                        {/* Step 4 — highlighted */}
+                        <div className="flex flex-col items-center">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-teal bg-teal/10">
+                                <ShieldCheck className="h-6 w-6 text-teal-dark" strokeWidth={1.8} />
+                            </div>
+                            <p className="mt-2 font-body text-[11px] font-bold text-teal-dark">Human Review</p>
+                            <div className="mt-1 flex gap-2 font-body text-[10px] text-paper-muted">
+                                <span className="border border-paper-border px-1.5 py-0.5">Approve</span>
+                                <span className="border border-paper-border px-1.5 py-0.5">Override</span>
+                                <span className="border border-paper-border px-1.5 py-0.5">Defer</span>
+                            </div>
+                        </div>
+                        {/* Arrow */}
+                        <div className="hidden sm:block sm:w-8 sm:border-t sm:border-dashed sm:border-paper-dim" />
+                        <span className="my-1 font-body text-[10px] text-paper-dim sm:hidden">↓</span>
+                        {/* Step 5 */}
+                        <div className="flex flex-col items-center">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-paper-border bg-paper-bg">
+                                <span className="font-display text-[13px] font-bold text-paper-muted">5</span>
+                            </div>
+                            <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Execute</p>
+                        </div>
+                    </div>
                 </motion.div>
 
                 <motion.div
