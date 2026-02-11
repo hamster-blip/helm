@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 import { fadeUp, fadeIn, stagger } from "@/lib/animations";
 import SectionLabel from "@/components/ui/section-label";
 import Image from "next/image";
-import { ShieldCheck, FileText, Gauge, Lock } from "lucide-react";
+import { ShieldCheck, FileText, Gauge, Lock, UserCheck, CheckCircle } from "lucide-react";
 
 const guardrails = [
     {
         icon: ShieldCheck,
-        title: "Human-in-the-Loop",
-        desc: "Every plan is a recommendation. Engineers approve, override, or escalate.",
+        title: "Human Approval",
+        desc: "No automated dispatch without explicit human approval. Operators approve, override, or defer every recommendation.",
     },
     {
         icon: FileText,
-        title: "Full Audit Trail",
-        desc: "Every data-point, agent decision, and approval is logged and traceable.",
+        title: "Immutable Audit Logs",
+        desc: "Immutable audit logs for every recommendation. Every decision, assumption, and constraint is recorded and traceable.",
     },
     {
         icon: Gauge,
@@ -24,8 +24,18 @@ const guardrails = [
     },
     {
         icon: Lock,
-        title: "SOV-Ready Compliance",
-        desc: "Built to align with marine-coordination, PTW and JSA standards.",
+        title: "Safe Defaults",
+        desc: "When uncertainty is high, Helm defaults to conservative action. No silent failures.",
+    },
+    {
+        icon: UserCheck,
+        title: "Role-Based Access",
+        desc: "Operators, planners, and managers see only what they need. Permissions configurable per role and site.",
+    },
+    {
+        icon: CheckCircle,
+        title: "Safety Processes Unchanged",
+        desc: "Existing permit-to-work systems and compliance procedures remain fully in place. Helm layers on top, never bypasses.",
     },
 ];
 
@@ -55,6 +65,13 @@ export default function WhyItMatters() {
                     >
                         Guardrails
                     </motion.h2>
+                    <motion.p
+                        variants={fadeUp}
+                        className="mx-auto mt-4 max-w-[600px] font-body text-[15px] font-semibold leading-[1.6] text-teal-dark"
+                    >
+                        Helm recommends. Operators decide. Existing safety
+                        processes and permits remain unchanged.
+                    </motion.p>
                 </motion.div>
 
                 {/* Shield SVG centered under heading */}
@@ -79,7 +96,7 @@ export default function WhyItMatters() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                     variants={stagger}
-                    className="mt-10 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4"
+                    className="mt-10 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3"
                 >
                     {guardrails.map((g, i) => {
                         const Icon = g.icon;
@@ -88,7 +105,10 @@ export default function WhyItMatters() {
                                 key={g.title}
                                 variants={fadeUp}
                                 className="border border-paper-border bg-paper-surface p-6"
-                                style={{ borderLeft: i === 0 ? undefined : "none" }}
+                                style={{
+                                    borderLeft: i % 3 === 0 ? undefined : "none",
+                                    borderTop: i < 3 ? undefined : "none",
+                                }}
                             >
                                 <Icon className="mb-3 h-5 w-5 text-paper-muted" strokeWidth={1.5} />
                                 <h3 className="font-display text-[15px] font-bold text-paper-text">
