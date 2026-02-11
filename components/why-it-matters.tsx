@@ -41,7 +41,7 @@ const guardrails = [
 
 const metrics = [
     { label: "Downtime", value: "−40%", note: "Faster mobilisation, fewer weather-miss days", pct: 40 },
-    { label: "Headcount", value: "−30%", note: "Senior planners focused on edge-cases, not routine", pct: 30 },
+    { label: "Resource Optimisation", value: "−30%", note: "Planning hours redeployed from routine scheduling to high-value decisions", pct: 30 },
     { label: "Availability", value: "+5 pts", note: "Better weather-window utilisation", pct: 60 },
     { label: "Post-Warranty", value: "−25%", note: "O&M cost reduction through optimised logistics", pct: 25 },
 ];

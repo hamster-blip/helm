@@ -13,7 +13,7 @@ const team = [
             "Chartered Engineer",
             "Offshore wind development — Japan & Taiwan",
         ],
-        bio: "This is not speculative AI. This is applied operational intelligence — built by someone who has planned offshore wind campaigns.",
+        bio: "Built East Asia's first offshore wind farms with Siemens. Diligenced Deep Tech at DCVC.",
     },
     {
         initials: "B",
