@@ -139,6 +139,22 @@ export default function WhyItMatters() {
                             <p className="mt-2 font-body text-[11px] font-semibold text-paper-text">Execute</p>
                         </div>
                     </div>
+                    {/* Feedback loop — curved arrow back from Execute to Data Ingested */}
+                    <div className="mt-4 flex items-center justify-center gap-2">
+                        <svg width="420" height="32" viewBox="0 0 420 32" fill="none" className="hidden sm:block">
+                            <path
+                                d="M380 4 C 400 4, 410 16, 400 28 L 20 28 C 10 28, 2 16, 20 4"
+                                stroke="#9A9A8A"
+                                strokeWidth="1"
+                                strokeDasharray="4 3"
+                                fill="none"
+                            />
+                            <polygon points="20,0 28,4 20,8" fill="#9A9A8A" />
+                        </svg>
+                    </div>
+                    <p className="mt-1 text-center font-body text-[10px] text-paper-dim">
+                        Feedback loop — outcomes inform next cycle
+                    </p>
                 </motion.div>
 
                 <motion.div

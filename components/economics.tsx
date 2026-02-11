@@ -7,17 +7,17 @@ import SectionLabel from "@/components/ui/section-label";
 const costLines = [
   {
     label: "CTV day rate",
-    range: "£5k–15k",
+    range: "$10k–25k",
     note: "per vessel, per day — wasted on an aborted mobilisation",
   },
   {
     label: "SOV day rate",
-    range: "£50k–100k+",
+    range: "$80k–150k+",
     note: "chartered whether used efficiently or not",
   },
   {
     label: "Single turbine offline",
-    range: "£2k–5k/day",
+    range: "$5k–15k/day",
     note: "in lost revenue, compounding across the fleet",
   },
   {
