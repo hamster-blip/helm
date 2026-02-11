@@ -21,13 +21,14 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 flex h-[72px] items-center justify-between px-16 transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between px-16 transition-all duration-300"
       style={{
         backgroundColor: scrolled ? "rgba(10, 14, 20, 0.95)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(26, 38, 50, 0.5)" : "1px solid transparent",
       }}
     >
-      <span className="font-heading text-2xl font-bold tracking-[4px] text-text-primary">
+      <span className="font-heading text-3xl font-bold tracking-[6px] text-text-primary">
         HELM
       </span>
       <div className="flex items-center gap-8">

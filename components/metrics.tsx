@@ -30,12 +30,12 @@ const metrics = [
 
 export default function Metrics() {
   return (
-    <section className="bg-bg-primary px-16 py-20">
-      <div className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-4">
+    <section className="bg-bg-primary px-16 py-24">
+      <div className="flex flex-col items-center gap-14">
+        <div className="flex flex-col items-center gap-5">
           <SectionLabel text="// WHY_IT_MATTERS" />
           <ScrollReveal>
-            <h2 className="max-w-[900px] text-center font-heading text-[40px] font-semibold leading-[1.2] text-text-primary">
+            <h2 className="max-w-[900px] text-center font-heading text-5xl font-semibold leading-[1.15] text-text-primary">
               The system operators open first every morning.
             </h2>
           </ScrollReveal>
@@ -52,15 +52,17 @@ export default function Metrics() {
             <motion.div
               key={m.label}
               variants={fadeUp}
-              className="flex flex-col items-center gap-3 bg-surface px-7 py-10"
+              className="relative flex flex-col items-center gap-4 overflow-hidden bg-surface px-8 py-12"
             >
-              <span className="font-mono text-[11px] font-semibold tracking-[2px] text-teal">
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/40 to-transparent" />
+              <span className="font-mono text-xs font-semibold tracking-[2px] text-teal">
                 {m.label}
               </span>
-              <span className="font-heading text-[28px] font-bold text-text-primary">
+              <span className="font-heading text-4xl font-bold text-text-primary">
                 {m.value}
               </span>
-              <p className="text-center font-mono text-[11px] leading-[1.6] text-text-secondary">
+              <p className="text-center font-mono text-sm leading-[1.6] text-text-secondary">
                 {m.desc}
               </p>
             </motion.div>

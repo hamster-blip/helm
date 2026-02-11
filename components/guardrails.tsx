@@ -2,27 +2,28 @@
 
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/animations";
+import { ShieldCheck, FileText, Gauge, Lock } from "lucide-react";
 import SectionLabel from "@/components/ui/section-label";
 import ScrollReveal from "@/components/ui/scroll-reveal";
 
 const cards = [
   {
-    icon: "🛡",
+    Icon: ShieldCheck,
     title: "Human Approval",
     desc: "Every recommendation requires human sign-off. Operators approve, override, or defer.",
   },
   {
-    icon: "📄",
+    Icon: FileText,
     title: "Audit Trails",
     desc: "Full traceability for every recommendation. Every assumption logged. Every constraint explained.",
   },
   {
-    icon: "📊",
+    Icon: Gauge,
     title: "Confidence Scores",
     desc: "Every decision shows its confidence level and the constraints that shaped it.",
   },
   {
-    icon: "🔒",
+    Icon: Lock,
     title: "Safe Defaults",
     desc: "When uncertainty is high, Helm defaults to conservative action. No silent failures.",
   },
@@ -30,11 +31,11 @@ const cards = [
 
 export default function Guardrails() {
   return (
-    <section className="bg-bg-alt px-16 py-20">
-      <div className="flex flex-col items-center gap-4">
+    <section className="bg-bg-alt px-16 py-24">
+      <div className="flex flex-col items-center gap-5">
         <SectionLabel text="// AUTONOMY_WITH_GUARDRAILS" />
         <ScrollReveal>
-          <h2 className="text-center font-heading text-[40px] font-semibold text-text-primary">
+          <h2 className="text-center font-heading text-5xl font-semibold text-text-primary">
             Designed for Mission-Critical Infrastructure
           </h2>
         </ScrollReveal>
@@ -45,19 +46,20 @@ export default function Guardrails() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="mt-12 grid grid-cols-4 gap-4"
+        className="mt-14 grid grid-cols-4 gap-4"
       >
         {cards.map((card) => (
           <motion.div
             key={card.title}
             variants={fadeUp}
-            className="flex flex-col gap-4 border border-border bg-surface p-7"
+            className="group relative flex flex-col gap-5 border border-border bg-surface p-8 transition-colors hover:border-teal/30"
           >
-            <span className="text-2xl text-teal">{card.icon}</span>
-            <h3 className="font-heading text-lg font-semibold text-text-primary">
+            <div className="absolute top-6 left-6 h-12 w-12 rounded-full bg-teal/10 blur-xl" />
+            <card.Icon className="relative h-7 w-7 text-teal" strokeWidth={1.5} />
+            <h3 className="font-heading text-xl font-semibold text-text-primary">
               {card.title}
             </h3>
-            <p className="font-mono text-xs leading-[1.7] text-text-secondary">
+            <p className="font-mono text-sm leading-[1.7] text-text-secondary">
               {card.desc}
             </p>
           </motion.div>

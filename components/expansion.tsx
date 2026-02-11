@@ -9,17 +9,17 @@ const tags = ["ONSHORE WIND", "UTILITY-SCALE SOLAR", "STORAGE", "HYBRID PLANTS"]
 
 export default function Expansion() {
   return (
-    <section className="bg-bg-alt px-16 py-20">
-      <div className="flex flex-col items-center gap-10">
-        <div className="flex flex-col items-center gap-4">
+    <section className="bg-bg-alt px-16 py-24">
+      <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-5">
           <SectionLabel text="// BEYOND_OFFSHORE_WIND" />
           <ScrollReveal>
-            <h2 className="text-center font-heading text-[40px] font-semibold text-text-primary">
+            <h2 className="text-center font-heading text-5xl font-semibold text-text-primary">
               Asset-Agnostic by Design
             </h2>
           </ScrollReveal>
           <ScrollReveal>
-            <p className="max-w-[800px] text-center font-mono text-sm leading-[1.7] text-text-secondary">
+            <p className="max-w-[800px] text-center font-mono text-base leading-[1.7] text-text-secondary">
               The same daily planning problem exists wherever assets are remote, weather-dependent, and expensive to maintain. Helm starts offshore because the pain is sharpest and the ROI is clearest.
             </p>
           </ScrollReveal>
@@ -30,13 +30,13 @@ export default function Expansion() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="flex flex-wrap items-center justify-center gap-3"
+          className="flex flex-wrap items-center justify-center gap-4"
         >
           {tags.map((tag) => (
             <motion.span
               key={tag}
               variants={fadeUp}
-              className="border border-border px-5 py-2.5 font-mono text-[11px] font-medium tracking-[1px] text-text-secondary"
+              className="border border-border px-6 py-3 font-mono text-sm font-medium tracking-[1px] text-text-secondary transition-colors hover:border-teal/30 hover:text-text-primary"
             >
               {tag}
             </motion.span>
