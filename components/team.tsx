@@ -16,7 +16,7 @@ const team = [
             "Built East Asia's first offshore wind farms with Siemens. Diligenced Deep Tech at DCVC.",
     },
     {
-        photo: "/christian.jpg",
+        photo: "/brandon.jpg",
         name: "Christian Cierny",
         title: "Harvard T.H. Chan · Heidelberg University",
         linkedin:
@@ -25,13 +25,13 @@ const team = [
             "Trained to make decisions under real-world constraints. Brings clinical urgency, systems thinking, and distribution-first execution to Helm.",
     },
     {
-        photo: "/brandon.jpg",
+        photo: "/christian.jpg",
         name: "Brandon Karagozian",
         title: "Harvard MPP",
         linkedin:
             "https://www.linkedin.com/in/brandon-karagozian/",
         summary:
-            "Brings operational rigor and execution discipline to complex, high-stakes workflows.",
+            "Brandon brings expertise in risk modeling and decision-making under uncertainty, with experience across infrastructure investing, public-sector deployment, and applied analytics. At Helm, he applies optimization and simulation methods to operational constraints like weather volatility, resource scarcity, and contract penalties to build interpretable decision models that improve offshore wind O&M outcomes.",
     },
 ];
 
