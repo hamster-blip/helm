@@ -66,17 +66,32 @@ export default function Economics() {
             <motion.div
               key={line.label}
               variants={fadeUp}
-              className="grid grid-cols-[160px_120px_1fr] items-baseline gap-6 border-b border-paper-border py-5 sm:grid-cols-[200px_140px_1fr]"
+              className="border-b border-paper-border py-5"
             >
-              <span className="font-body text-[14px] font-semibold text-paper-text">
-                {line.label}
-              </span>
-              <span className="font-display text-[22px] font-bold text-paper-text leading-none">
-                {line.range}
-              </span>
-              <span className="font-body text-[13px] leading-[1.5] text-paper-muted">
-                {line.note}
-              </span>
+              {/* Mobile: stacked layout */}
+              <div className="flex flex-col gap-1 sm:hidden">
+                <span className="font-body text-[14px] font-semibold text-paper-text">
+                  {line.label}
+                </span>
+                <span className="font-display text-[22px] font-bold text-paper-text leading-none">
+                  {line.range}
+                </span>
+                <span className="font-body text-[13px] leading-[1.5] text-paper-muted">
+                  {line.note}
+                </span>
+              </div>
+              {/* Desktop: horizontal row */}
+              <div className="hidden sm:grid sm:grid-cols-[200px_140px_1fr] sm:items-baseline sm:gap-6">
+                <span className="font-body text-[14px] font-semibold text-paper-text">
+                  {line.label}
+                </span>
+                <span className="font-display text-[22px] font-bold text-paper-text leading-none">
+                  {line.range}
+                </span>
+                <span className="font-body text-[13px] leading-[1.5] text-paper-muted">
+                  {line.note}
+                </span>
+              </div>
             </motion.div>
           ))}
         </motion.div>

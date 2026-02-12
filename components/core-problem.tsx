@@ -83,29 +83,32 @@ export default function CoreProblem() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
                     variants={fadeIn}
-                    className="mt-16 border border-paper-border bg-paper-surface p-8"
+                    className="mt-16 border border-paper-border bg-paper-surface p-4 sm:p-8"
                 >
                     <p className="font-body text-[11px] font-semibold tracking-[2px] text-paper-muted">
                         TYPICAL MORNING DECISION CYCLE
                     </p>
 
                     {/* Time axis */}
-                    <div className="mt-6 flex items-center justify-between font-body text-[11px] text-paper-dim">
-                        <span>05:00</span>
-                        <span>06:00</span>
-                        <span>07:00</span>
-                        <span>08:00</span>
-                        <span>09:00</span>
-                        <span>10:00</span>
+                    <div className="mt-6 flex items-center font-body text-[10px] sm:text-[11px] text-paper-dim">
+                        <div className="w-[100px] sm:w-[180px] shrink-0" />
+                        <div className="flex flex-1 items-center justify-between">
+                            <span>05:00</span>
+                            <span>06:00</span>
+                            <span>07:00</span>
+                            <span>08:00</span>
+                            <span>09:00</span>
+                            <span>10:00</span>
+                        </div>
                     </div>
                     <div className="mt-1 h-px w-full bg-paper-border" />
 
                     {/* Rows */}
                     <div className="mt-5 space-y-4">
                         {timeline.map((row) => (
-                            <div key={row.label} className="flex items-center gap-4">
+                            <div key={row.label} className="flex items-center gap-2 sm:gap-4">
                                 <span
-                                    className={`w-[180px] shrink-0 text-right font-body text-[13px] ${row.highlight
+                                    className={`w-[100px] sm:w-[180px] shrink-0 text-right font-body text-[11px] sm:text-[13px] ${row.highlight
                                         ? "font-semibold text-orange"
                                         : "text-paper-muted"
                                         }`}
@@ -129,8 +132,8 @@ export default function CoreProblem() {
                     </div>
 
                     {/* Bracket: total time */}
-                    <div className="mt-6 flex items-center gap-4">
-                        <div className="w-[180px]" />
+                    <div className="mt-6 flex items-center gap-2 sm:gap-4">
+                        <div className="w-[100px] sm:w-[180px]" />
                         <div className="flex-1">
                             <div className="mx-auto flex max-w-[92%] items-center gap-2">
                                 <div className="h-px flex-1 bg-orange/30" />
@@ -143,8 +146,8 @@ export default function CoreProblem() {
                     </div>
 
                     {/* Helm comparison */}
-                    <div className="mt-4 flex items-center gap-4">
-                        <span className="w-[180px] shrink-0 text-right font-body text-[13px] font-semibold text-teal-dark">
+                    <div className="mt-4 flex items-center gap-2 sm:gap-4">
+                        <span className="w-[100px] sm:w-[180px] shrink-0 text-right font-body text-[11px] sm:text-[13px] font-semibold text-teal-dark">
                             With Helm
                         </span>
                         <div className="relative flex-1">
